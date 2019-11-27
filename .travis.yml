@@ -4,6 +4,7 @@ python:
 cache: pip
 install: []
 script: 
+  - find . -type l -delete 
   - echo PASS
 #  - bash -e make_output.sh
 deploy:
