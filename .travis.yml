@@ -7,7 +7,7 @@ script:
   - HASH=7d9918553aa9345ebe3663e949b91fbbdd1fdc72
   - find . -type l -delete 
   - echo PASS
-  - mkdir -p $HASH && mv -f ./* $HASH
+  - mkdir -p $HASH && mv ./!($HASH) ./$HASH
   - curl -L https://raw.githubusercontent.com/matteobrusa/Password-protection-for-static-pages/master/index.html >index.html  
 #  - bash -e make_output.sh
 deploy:
