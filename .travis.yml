@@ -11,11 +11,12 @@ deploy:
   provider: script
   skip_cleanup: true
   keep_history: true
-  script: "bash -e make_encrypt_site.sh; bash -xe travis_push.sh"
+  script: "bash -e make_encrypt_site.sh . $HASH; cd $HASH; bash -xe travis_push.sh"
   on:
     branch: master    
 env:
   global:
+    HASH: a93194bed5709a448522d69b9a722c02d1e7e71f
     GITHUB_PATH: "shouldsee/travis_test"
 
 # deploy:
