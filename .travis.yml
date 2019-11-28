@@ -11,9 +11,7 @@ deploy:
   provider: script
   skip_cleanup: true
   keep_history: true
-  script: 
-    - bash -e make_encrypt_site.sh
-    - bash -xe travis_push.sh  
+  script: bash -e make_encrypt_site.sh; bash -xe travis_push.sh  
   on:
     branch: master    
 env:
