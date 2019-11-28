@@ -12,9 +12,8 @@ deploy:
   skip_cleanup: true
   keep_history: true
   script: 
-    - sudo mv travis_push.sh /bin/
     - bash -e make_encrypt_site.sh
-    - bash -e /bin/travis_push.sh  
+    - bash -e travis_push.sh  
   on:
     branch: master    
 env:
