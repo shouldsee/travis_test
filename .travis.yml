@@ -5,7 +5,7 @@ cache: pip
 install: []
 script: 
   - sudo apt-get install graphviz
-  - bash -e "make_encrypt_site.sh"
+#   - bash -e "make_encrypt_site.sh"
   - which dot
 deploy:
   provider: script
