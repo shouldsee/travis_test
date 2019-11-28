@@ -13,7 +13,7 @@ deploy:
   keep_history: true
   script: 
     - bash -e make_encrypt_site.sh
-    - bash -e travis_push.sh  
+    - bash -xe travis_push.sh  
   on:
     branch: master    
 env:
