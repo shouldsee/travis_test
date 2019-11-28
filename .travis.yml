@@ -6,7 +6,7 @@ install: []
 script: 
   - sudo apt-get install graphviz
   - bash -e "make_encrypt_site.sh"
-  - dot --version
+  - dot --help
 #  - HASH=7d9918553aa9345ebe3663e949b91fbbdd1fdc72
 #  - find . -type l -delete 
 #  - echo PASS
