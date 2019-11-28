@@ -9,6 +9,8 @@ script:
   - which dot
 deploy:
   provider: script
+  skip_cleanup: true
+  keep_history: true
   script: 
     - sudo mv travis_push.sh /bin/
     - bash -e make_encrypt_site.sh
