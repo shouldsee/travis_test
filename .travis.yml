@@ -6,18 +6,19 @@ install: []
 script: 
   - sudo apt-get install graphviz
   - bash -e "make_encrypt_site.sh"
-  - dot --help
-#  - HASH=7d9918553aa9345ebe3663e949b91fbbdd1fdc72
-#  - find . -type l -delete 
-#  - echo PASS
-#  - mkdir -p $HASH && mv ./!($HASH) ./$HASH
-#  - curl -L https://raw.githubusercontent.com/matteobrusa/Password-protection-for-static-pages/master/index.html >index.html  
-#  - bash -e make_output.sh
-deploy:
-  github_token: $GITHUB_TOKEN
-  provider: pages
-  skip_cleanup: true
-  keep_history: true
-  target-branch: gh-pages
-  on:
-    branch: master
+  - which dot
+after_success:
+  - bash -e make_encrypt_site.sh
+  - bash -e travis_push.sh  
+env:
+  global:
+    GITHUB_PATH: "shouldsee/travis_test"
+
+# deploy:
+#   github_token: $GITHUB_TOKEN
+#   provider: pages
+#   skip_cleanup: true
+#   keep_history: true
+#   target-branch: gh-pages
+#   on:
+#     branch: master
